@@ -2,7 +2,6 @@ from typing import List
 from typing import Mapping
 from typing import Union
 import random
-import copy
 
 
 class Chap01():
