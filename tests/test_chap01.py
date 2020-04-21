@@ -1,5 +1,4 @@
 import sys
-
 from nlp100.chap01 import Chap01
 
 try:
@@ -75,7 +74,7 @@ class Chap01Test(unittest.TestCase):
     def test_get_typoglycemia(self):
         sentence_to_be_typoed = "I couldn’t believe that I could actually understand what I was reading : the phenomenal power of the human mind."
         self.assertNotEqual(self.proc.get_typoglycemia(sentence_to_be_typoed),
-                             sentence_to_be_typoed)
+                            sentence_to_be_typoed)
 
 
 if __name__ == '__main__':
