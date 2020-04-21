@@ -66,7 +66,7 @@ class Chap01():
                 continue
             words_list[i] = words_list[i][0] + self._get_shuffled_string(
                 words_list[i][1:-1]) + words_list[i][-1]
-        return words_list
+        return str(words_list)
 
     def _get_shuffled_string(self, s: str) -> str:
         return "".join(random.sample(s, len(s)))

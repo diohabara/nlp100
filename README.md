@@ -15,3 +15,9 @@ make init
 ```sh
 make test
 ```
+
+### Freeze your environment
+
+```sh
+make freeze
+```
