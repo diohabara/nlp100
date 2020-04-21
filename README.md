@@ -1,11 +1,17 @@
 # NLP 100 Exercise
 
-Implementation of [This site](https://nlp100.github.io/en/ch01.html)
+Implementation of [NLP 100 Exercise](https://nlp100.github.io/en/ch01.html)
 
 ## Usage
+
+### Initialization
+
+```sh
+make init
+```
 
 ### Test
 
 ```sh
-python -m unittest
+make test
 ```
