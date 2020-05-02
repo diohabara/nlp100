@@ -9,7 +9,7 @@ class Chap01():
         return s[::-1]
 
     def get1357(self, s: str) -> str:
-        return s[0] + s[2] + s[4] + s[6]
+        return s[::2]
 
     def concat_two_str(self, s1: str, s2: str) -> str:
         res = ""
