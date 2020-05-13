@@ -39,6 +39,10 @@ class Chap01Test(unittest.TestCase):
             ["Ia", "am", "ma", "an", "nN", "NL", "LP", "Pe", "er"])
 
     def test_set(self):
+        """
+        06. SetPermalink
+        Let the sets of letter bi-grams from the words “paraparaparadise” and “paragraph” $X$ and $Y$, respectively. Obtain the union, intersection, difference of the two sets. In addition, check whether the bigram “se” is included in the sets $X$ and $Y$
+        """
         s1 = "paraparaparadise"
         s2 = "paragraph"
         X = self.proc.get_bigram(s1)  # s1's bi-gram
