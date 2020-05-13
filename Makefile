@@ -6,6 +6,7 @@ freeze:
 		pip freeze > requirements.txt
 
 test:
+		flake8
 		mypy nlp100/*py
 		python -m unittest
 
