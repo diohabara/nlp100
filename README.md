@@ -1,6 +1,6 @@
 # NLP 100 Exercise
 
-Implementation of [NLP 100 Exercise](https://nlp100.github.io/en/ch01.html).
+Implementation of [NLP 100 Exercise](https://nlp100.github.io/).
 
 ## Usage
 
