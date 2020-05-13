@@ -1,6 +1,6 @@
 init:
 		python -m pip install --upgrade pip
-		pip install flake8 pytest
+		pip install flake8 pytest wheel
 		if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
 freeze:
