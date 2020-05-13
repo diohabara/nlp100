@@ -1,5 +1,6 @@
 appdirs==1.4.3
 astroid==2.3.3
+attrs==19.3.0
 autopep8==1.5.2
 beautifulsoup4==4.8.2
 bs4==0.0.1
@@ -23,15 +24,20 @@ line-bot-sdk==1.16.0
 MarkupSafe==1.1.1
 matplotlib==3.2.0
 mccabe==0.6.1
+more-itertools==8.2.0
 mpmath==1.1.0
 mypy==0.770
 mypy-extensions==0.4.3
 numpy==1.18.1
+packaging==20.3
 pipenv==2018.11.26
+pluggy==0.13.1
+py==1.8.1
 pycodestyle==2.5.0
 pyflakes==2.1.1
 pylint==2.4.4
 pyparsing==2.4.6
+pytest==5.4.2
 python-dateutil==2.8.1
 requests==2.23.0
 six==1.14.0
@@ -43,6 +49,7 @@ urllib3==1.25.8
 virtualenv==20.0.10
 virtualenv-clone==0.5.3
 wakatime==13.0.7
+wcwidth==0.1.9
 Werkzeug==1.0.0
 wrapt==1.11.2
 xmlrunner==1.7.7
