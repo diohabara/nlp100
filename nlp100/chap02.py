@@ -26,15 +26,37 @@ class Chap02():
                         for line in lines:
                             line.replace("\t", " ")
                             write_file.write(line)
-                    read_file.close()
-                    write_file.close()
+                        write_file.close()
+                        read_file.close()
                 except EnvironmentError:
-                    print("Error: fail to read the file")
+                    print("Error: fail to open the file")
         except EnvironmentError:
-            print("Error: fail to open the file")
+            print("Error: fail to read the file")
 
     def save_two_lines(self) -> None:
-        pass
+        original_path = "docs/popular-names.txt"
+        try:
+            with open(original_path, mode="r",
+                      encoding="utf-8") as read_file:
+                try:
+                    with open("docs/col1.txt",
+                              mode="w",
+                              encoding="utf-8") as col1, open(
+                                  "docs/col2.txt",
+                                  mode="w",
+                                  encoding="utf-8") as col2:
+                        lines = read_file.read().splitlines()
+                        for line in lines:
+                            strs = list(line.split())
+                            col1.write(strs[0] + "\n")
+                            col2.write(strs[1] + "\n")
+                    col1.close()
+                    col2.close()
+                    read_file.close()
+                except EnvironmentError:
+                    print("Error: fail to open the files")
+        except EnvironmentError:
+            print("Error: fail to read the file")
 
     def merge_two_textfiles(self) -> None:
         pass

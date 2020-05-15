@@ -30,17 +30,43 @@ class Chap02Test(unittest.TestCase):
         sed_file_path = "docs/q11_modified_by_sed.txt"
         f = open(sed_file_path, "w")
         args = ["sed", "-e", "s/<tab>/<space>/g", "docs/popular-names.txt"]
-        subprocess.call(args, stdout=f)
+        try:
+            subprocess.run(args, stdout=f)
+        except subprocess.CalledProcessError:
+            print("Error: fail to sed")
         self.assertTrue(filecmp.cmp(python_file_path,
                                     sed_file_path,
                                     shallow=False))
+        f.close()
 
     def test_save_two_lines(self):
         """
         12. 1列目をcol1.txtに，2列目をcol2.txtに保存
         各行の1列目だけを抜き出したものをcol1.txtに，2列目だけを抜き出したものをcol2.txtとしてファイルに保存せよ．確認にはcutコマンドを用いよ．
         """
-        pass
+        self.proc.save_two_lines()
+        original_path = "docs/popular-names.txt"
+        col1_path = "docs/col1.txt"
+        col2_path = "docs/col2.txt"
+        test1_path = "docs/col1_test.txt"
+        test2_path = "docs/col2_test.txt"
+        args1 = ["cut", "-f1", "-d", '\t', original_path]
+        args2 = ["cut", "-f2", "-d", '\t', original_path]
+        f1 = open(test1_path, "w")
+        f2 = open(test2_path, "w")
+        try:
+            subprocess.run(args1, stdout=f1)
+            subprocess.run(args2, stdout=f2)
+        except subprocess.CalledProcessError:
+            print("Error: fail to cut")
+        self.assertTrue(filecmp.cmp(col1_path,
+                                    test1_path,
+                                    shallow=False))
+        self.assertTrue(filecmp.cmp(col2_path,
+                                    test2_path,
+                                    shallow=False))
+        f1.close()
+        f2.close()
 
     def test_merge_two_textfiles(self):
         """
