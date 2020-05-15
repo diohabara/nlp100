@@ -22,8 +22,7 @@ class Chap02():
                     with open(f"docs/{new_filename}",
                               mode="w",
                               encoding="utf-8") as write_file:
-                        lines = read_file.read()
-                        for line in lines:
+                        for line in read_file:
                             line.replace("\t", " ")
                             write_file.write(line)
                         write_file.close()
@@ -45,8 +44,7 @@ class Chap02():
                                   "docs/col2.txt",
                                   mode="w",
                                   encoding="utf-8") as col2:
-                        lines = read_file.read().splitlines()
-                        for line in lines:
+                        for line in read_file:
                             strs = list(line.split())
                             col1.write(strs[0] + "\n")
                             col2.write(strs[1] + "\n")
@@ -59,7 +57,24 @@ class Chap02():
             print("Error: fail to read the file")
 
     def merge_two_textfiles(self) -> None:
-        pass
+        col1_path = "docs/col1.txt"
+        col2_path = "docs/col2.txt"
+        merged_path = "docs/merged.txt"
+        try:
+            with open(merged_path, "w",
+                      encoding="utf-8") as merged_file:
+                try:
+                    with open(col1_path, "r",
+                              encoding="utf-8") as col1, open(
+                                  col2_path, "r",
+                                  encoding="utf-8") as col2:
+                        for c1, c2 in zip(col1, col2):
+                            line = f"{c1.strip()}\t{c2.strip()}\n"
+                            merged_file.write(line)
+                except EnvironmentError:
+                    print("Error: fail to read the files")
+        except EnvironmentError:
+            print("Error: fail to write the file")
 
     def first_n_lines(self) -> None:
         pass

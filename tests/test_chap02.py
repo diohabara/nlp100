@@ -73,7 +73,21 @@ class Chap02Test(unittest.TestCase):
         13. col1.txtとcol2.txtをマージ
         12で作ったcol1.txtとcol2.txtを結合し，元のファイルの1列目と2列目をタブ区切りで並べたテキストファイルを作成せよ．確認にはpasteコマンドを用いよ．
         """
-        pass
+        self.proc.merge_two_textfiles()
+        col1_path = "docs/col1.txt"
+        col2_path = "docs/col2.txt"
+        merged_path = "docs/merged.txt"
+        test_merged_path = "docs/test_merged.txt"
+        args = ["paste", col1_path, col2_path]
+        f = open(test_merged_path, "w")
+        try:
+            subprocess.run(args, stdout=f)
+        except subprocess.CalledProcessError:
+            print("Error: fail to paste")
+        self.assertTrue(filecmp.cmp(merged_path,
+                                    test_merged_path,
+                                    shallow=False))
+        f.close()
 
     def test_n_lines(self):
         """
