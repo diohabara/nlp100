@@ -1,5 +1,6 @@
 import subprocess
 import unittest
+import filecmp
 from nlp100.chap02 import Chap02
 
 
@@ -24,7 +25,15 @@ class Chap02Test(unittest.TestCase):
         11. タブをスペースに置換
         タブ1文字につきスペース1文字に置換せよ．確認にはsedコマンド，trコマンド，もしくはexpandコマンドを用いよ．
         """
-        pass
+        self.proc.make_tab_into_space()
+        python_file_path = "docs/q11_modified_by_python.txt"
+        sed_file_path = "docs/q11_modified_by_sed.txt"
+        f = open(sed_file_path, "w")
+        args = ["sed", "-e", "s/<tab>/<space>/g", "docs/popular-names.txt"]
+        subprocess.call(args, stdout=f)
+        self.assertTrue(filecmp.cmp(python_file_path,
+                                    sed_file_path,
+                                    shallow=False))
 
     def test_save_two_lines(self):
         """

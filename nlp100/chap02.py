@@ -13,9 +13,10 @@ class Chap02():
         return number_of_line
 
     def make_tab_into_space(self) -> None:
+        original_filename = "popular-names.txt"
         new_filename = "q11_modified_by_python.txt"
         try:
-            with open("docs/popular-names.txt", mode="r",
+            with open(f"docs/{original_filename}", mode="r",
                       encoding="utf-8") as read_file:
                 try:
                     with open(f"docs/{new_filename}",
