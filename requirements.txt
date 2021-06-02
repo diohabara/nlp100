@@ -36,7 +36,7 @@ soupsieve==2.0
 sympy==1.5.1
 typed-ast==1.4.1
 typing-extensions==3.7.4.2
-urllib3==1.25.8
+urllib3==1.26.5
 virtualenv==20.0.10
 virtualenv-clone==0.5.3
 wakatime==13.0.7
