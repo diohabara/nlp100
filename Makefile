@@ -1,12 +1,9 @@
-init:
-		pip install -r requirements.txt
-
-freeze:
-		rm requirements.txt
-		pip freeze > requirements.txt
-
+lint:
+	poetry run pysen run format
+	poetry run pysen run lint
+watch:
+	poetry run ptw .
 test:
-		mypy nlp100/*py
-		python -m unittest
+	poetry run pytest
 
 .PHONY: init test

@@ -1,7 +1,5 @@
 # NLP 100 Exercise
 
-![Python Test](https://github.com/diohabara/nlp100/workflows/Python%20Test/badge.svg)
-
 Implementation of [NLP 100 Exercise](https://nlp100.github.io/).
 
 ## Usage
@@ -9,7 +7,8 @@ Implementation of [NLP 100 Exercise](https://nlp100.github.io/).
 ### Initialization
 
 ```sh
-make init
+pyenv install
+poetry install
 ```
 
 ### Test
@@ -18,8 +17,14 @@ make init
 make test
 ```
 
-### Freeze your environment
+or watch
 
 ```sh
-make freeze
+make watch
+```
+
+### Lint/Format
+
+```sh
+make lint
 ```
