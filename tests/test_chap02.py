@@ -5,7 +5,7 @@ The file popular-names.txt stores names of babies born in US with their genders,
 
 import subprocess
 
-from nlp100.chap02 import fun10, fun11, fun12, fun13
+from nlp100.chap02 import fun10, fun11, fun12, fun13, fun14, fun15, fun16
 
 
 def test_fun10() -> None:
@@ -54,4 +54,45 @@ def test_fun13() -> None:
     ).stdout
     fun13()
     with open("data/col1_col2.txt", "r") as f:
+        assert f.read() == expected
+
+
+def test_fun14() -> None:
+    """
+    Receive a natural number N from a command-line argument, and output the first N lines of the file. Confirm the result by using head command.
+    """
+    n = 5
+    expected = subprocess.run(
+        ["head", "-n", str(n), "data/popular-names.txt"],
+        capture_output=True,
+        text=True,
+    ).stdout
+    assert fun14(n) == expected
+
+
+def test_fun15() -> None:
+    """
+    Receive a natural number N from a command-line argument, and output the last N lines of the file. Confirm the result by using tail command.
+    """
+    n = 5
+    expected = subprocess.run(
+        ["tail", "-n", str(n), "data/popular-names.txt"],
+        capture_output=True,
+        text=True,
+    ).stdout
+    assert fun15(n) == expected
+
+
+def test_fun16() -> None:
+    """
+    Receive a natural number $N$ from a command-line argument, and split the input file into $N$ pieces at line boundaries. Confirm the result by using split command.
+    """
+    n = 1
+    expected = subprocess.run(
+        ["split", "-l", str(n), "data/popular-names.txt", "data/popular-names"],
+        capture_output=True,
+        text=True,
+    ).stdout
+    fun16(n)
+    with open("data/popular-namesaa", "r") as f:
         assert f.read() == expected

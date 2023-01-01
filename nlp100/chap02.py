@@ -33,3 +33,24 @@ def fun13() -> None:
         lines2 = c2.readlines()
         for line1, line2 in zip(lines1, lines2):
             c3.write(line1.replace("\n", "") + "\t" + line2)
+
+
+def fun14(n: int) -> str:
+    with open("data/popular-names.txt", "r") as f:
+        lines = f.readlines()
+        return "".join(lines[:n])
+
+
+def fun15(n: int) -> str:
+    with open("data/popular-names.txt", "r") as f:
+        lines = f.readlines()
+        return "".join(lines[-n:])
+
+
+def fun16(n: int) -> None:
+    assert 0 < n
+    with open("data/popular-names.txt", "r") as f:
+        lines = f.readlines()
+        for i in range(0, len(lines), len(lines) // n):
+            with open(f"data/chunk{i}.txt", "w") as c:
+                c.write("".join(lines[i : i + n]))
