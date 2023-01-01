@@ -87,12 +87,16 @@ def test_fun16() -> None:
     """
     Receive a natural number $N$ from a command-line argument, and split the input file into $N$ pieces at line boundaries. Confirm the result by using split command.
     """
-    n = 1
+    n = 2000
     expected = subprocess.run(
-        ["split", "-l", str(n), "data/popular-names.txt", "data/popular-names"],
+        ["split", "-l", f"{n}", "-d", "data/popular-names.txt", "data/expected"],
         capture_output=True,
         text=True,
     ).stdout
-    fun16(n)
-    with open("data/popular-namesaa", "r") as f:
-        assert f.read() == expected
+    count = fun16(n)
+    for i in range(count):
+        with open(f"data/chunk{i:02}.txt", "r") as chunk, open(
+            f"data/expected{i:02}", "r"
+        ) as expect:
+            print(i)
+            assert chunk.read() == expect.read()

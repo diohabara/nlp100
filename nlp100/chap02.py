@@ -1,3 +1,6 @@
+import math
+
+
 def fun10() -> int:
     with open("data/popular-names.txt", "r") as f:
         lines = f.readlines()
@@ -47,10 +50,13 @@ def fun15(n: int) -> str:
         return "".join(lines[-n:])
 
 
-def fun16(n: int) -> None:
+def fun16(n: int) -> int:
     assert 0 < n
+    count = 0
     with open("data/popular-names.txt", "r") as f:
         lines = f.readlines()
-        for i in range(0, len(lines), len(lines) // n):
-            with open(f"data/chunk{i}.txt", "w") as c:
-                c.write("".join(lines[i : i + n]))
+        for i in range(0, len(lines), n):
+            count += 1
+            with open(f"data/chunk{i:02}.txt", "w") as c:
+                c.write("".join(lines[i : min(i + n, len(lines))]))
+    return count
