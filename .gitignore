@@ -147,3 +147,4 @@ static
 # NLP100
 data/
 !data/popular-names.txt
+!data/enwiki-country.json
