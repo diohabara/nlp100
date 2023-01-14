@@ -4,6 +4,6 @@ lint:
 watch:
 	poetry run ptw .
 test:
-	poetry run pytest
+	poetry run pytest -vv
 
 .PHONY: init test
