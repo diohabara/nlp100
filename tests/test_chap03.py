@@ -2,7 +2,7 @@
 Chapter 3: Regular Expression
 """
 
-from nlp100.chap03 import fun20, fun21, fun22, fun23
+from nlp100.chap03 import fun20, fun21, fun22, fun23, fun24
 
 
 def test_fun20() -> None:
@@ -159,33 +159,117 @@ def test_fun24() -> None:
     """
     Extract references to media files linked from the article.
     """
+    expected = [
+        "Royal Coat of Arms of the United Kingdom.svg",
+        "United States Navy Band - God Save the Queen.ogg]]</div>\n",
+        "Europe-UK.svg",
+        "United Kingdom (+overseas territories and crown dependencies) in the World (+Antarctica claims).svg",
+        "Stonehenge, Condado de Wiltshire, Inglaterra, 2014-08-12, DD 18.JPG",
+        "Bayeux Tapestry WillelmDux.jpg",
+        "State House- 1620 - St Geo - Bermuda.jpg",
+        "Treaty of Union.jpg",
+        "Royal Irish Rifles ration party Somme July 1916.jpg",
+        "The British Empire.png",
+        "Tratado de Lisboa 13 12 2007 (081).jpg",
+        "Uk topo en.jpg",
+        "Inside the Reef Cayman.jpg",
+        "Cap Juluca - Anguilla.jpg",
+        "Bermuda-Harbour and Town of St George.jpg",
+        "Rothera from reptile.jpg",
+        "Roadtown, Tortola.jpg",
+        "Upland.jpg",
+        "Catalan Bay from The Rock.JPG",
+        "Soufriere Hills.jpg",
+        "Bounty_bay.jpg",
+        "St-Helena-Jamestown-from-above.jpg",
+        "Grytviken_church.jpg",
+        "Cockburn Town.jpg",
+        "Mont Orgueil and Gorey harbour, Jersey.jpg",
+        "St Peter Port Guernsey.jpg",
+        "The_View_From_Douglas_Head,_Isle_Of_Man..jpg",
+        "London Parliament 2007-1.jpg",
+        "UK Political System.png",
+        "Scottish Parliament, Main Debating Chamber - geograph.org.uk - 1650829.jpg",
+        "Royal Courts of Justice 2019.jpg",
+        "High Court of Justiciary.jpg",
+        "Gibraltar National Day 027 (9719742224) (2).jpg",
+        "HMS Queen Elizabeth (R08) underway during trials with HMS Sutherland (F81) and HMS Iron Duke (F234) on 28 June 2017 (45162784).jpg",
+        "Banco de Inglaterra, Londres, Inglaterra, 2014-08-11, DD 141.JPG",
+        "2017 Jaguar XE Portfolio Diesel Automatic 2.0 Front.jpg",
+        "British Airways A380-841 G-XLEA (16948377692).jpg",
+        "Darwin restored2.jpg",
+        "Heathrow T5.jpg",
+        "St Pancras Railway Station 2012-06-23.jpg",
+        "Oil platform in the North SeaPros.jpg",
+        "Population density UK 2011 census.png",
+        "Non-white in the 2011 census.png",
+        "Anglospeak.png",
+        "West Side of Westminster Abbey, London - geograph.org.uk - 1406999.jpg",
+        "Neasden Temple - Shree Swaminarayan Hindu Mandir - Gate.jpg",
+        "United Kingdom foreign born population by country of birth.png",
+        "The Prime Minister, Shri Narendra Modi and the Prime Minister of United Kingdom (UK), Mr. David Cameron interacting with the school children, at Wembley Stadium, in London on November 13, 2015.jpg",
+        "British expats countrymap.svg",
+        "Tom Quad, Christ Church 2004-01-21.jpg",
+        "KingsCollegeChapelWest.jpg",
+        "Edinburgh New College (8594473141).jpg",
+        "15th Sep 2012-Abdn Children's Hosp & Emergency Care Centre 10.JPG",
+        "Shakespeare.jpg",
+        "Dickens by Watkins 1858.png",
+        "The Fabs.JPG",
+        "Turner selfportrait.jpg",
+        "Hitchcock, Alfred 02.jpg",
+        "Chicken tikka masala.jpg",
+        "Bbc broadcasting house front.jpg",
+        "Wembley-STadion 2013.JPG",
+        "Inside the Millennium Stadium, Cardiff.jpg",
+        "Saville vs Broady – Wimbledon Boys Singles Final 2011.jpg",
+        "R&A Clubhouse, Old Course, Swilcan Burn bridge.jpg",
+        "Britannia-Statue.jpg",
+    ]
+    achieved = fun24()
+    assert expected == achieved
 
 
 def test_fun25() -> None:
     """
     Extract field names and their values in the Infobox “country”, and store them in a dictionary object.
     """
+    expected = ""
+    achieved = fun24()
+    # assert expected == achieved
 
 
 def test_fun26() -> None:
     """
     In addition to the process of the problem 25, remove emphasis MediaWiki markups from the values. See Help:Cheatsheet.
     """
+    expected = ""
+    achieved = fun24()
+    # assert expected == achieved
 
 
 def test_fun27() -> None:
     """
     In addition to the process of the problem 26, remove internal links from the values. See Help:Cheatsheet.
     """
+    expected = ""
+    achieved = fun24()
+    # assert expected == achieved
 
 
 def test_fun28() -> None:
     """
     In addition to the process of the problem 27, remove MediaWiki markups from the values as much as you can, and obtain the basic information of the country in plain text format.
     """
+    expected = ""
+    achieved = fun24()
+    # assert expected == achieved
 
 
 def test_fun29() -> None:
     """
     Obtain the URL of the country flag by using the analysis result of Infobox. (Hint: convert a file reference to a URL by calling imageinfo in MediaWiki API)
     """
+    expected = ""
+    achieved = fun24()
+    # assert expected == achieved

@@ -34,5 +34,14 @@ def fun23() -> list[tuple[str, int]]:
     return res
 
 
+def fun24() -> list[str]:
+    data = fun20()
+    #  [[File:United Kingdom (+overseas territories and crown dependencies) in the World (+Antarctica claims).svg|frameless|upright=1.15]]
+    pattern = r"\[\[File:([^\.]*\.[^\|]*)\|[^\|]*\|[^\]]*\]\]"
+    prog = re.compile(pattern)
+    print(prog)
+    return prog.findall(data)
+
+
 if __name__ == "__main__":
     fun21()
