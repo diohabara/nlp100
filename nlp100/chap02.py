@@ -1,4 +1,4 @@
-from collections import Counter, defaultdict
+from collections import Counter
 
 
 def fun10() -> int:
@@ -70,9 +70,10 @@ def fun18() -> str:
         lines.sort(key=lambda x: int(x.split()[2]), reverse=True)
     return "".join(lines[:5])
 
+
 def fun19() -> str:
     with open("data/popular-names.txt", "r") as f:
         lines = f.readlines()
         word_to_freq = Counter([line.split()[0] for line in lines])
-        word_to_freq = sorted(word_to_freq.items(), key=lambda x: x[1], reverse=True)
-        return "".join([f" {ele[1]:3} {ele[0]}\n" for ele in word_to_freq][:10])
+        sorted_word_to_freq = sorted(word_to_freq.items(), key=lambda x: x[1], reverse=True)
+        return "".join([f" {ele[1]:3} {ele[0]}\n" for ele in sorted_word_to_freq][:10])
