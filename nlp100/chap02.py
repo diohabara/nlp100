@@ -75,5 +75,10 @@ def fun19() -> str:
     with open("data/popular-names.txt", "r") as f:
         lines = f.readlines()
         word_to_freq = Counter([line.split()[0] for line in lines])
+<<<<<<< Updated upstream
         sorted_word_to_freq = sorted(word_to_freq.items(), key=lambda x: x[1], reverse=True)
         return "".join([f" {ele[1]:3} {ele[0]}\n" for ele in sorted_word_to_freq][:10])
+=======
+        word_to_freq = sorted(word_to_freq.items(), key=lambda x: x[1], reverse=True)
+        return "".join([f" {ele[1]:3} {ele[0]}\n" for ele in word_to_freq][:10])
+>>>>>>> Stashed changes
