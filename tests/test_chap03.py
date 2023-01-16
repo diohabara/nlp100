@@ -2,7 +2,7 @@
 Chapter 3: Regular Expression
 """
 
-from nlp100.chap03 import fun20, fun21, fun22, fun23, fun24
+from nlp100.chap03 import fun20, fun21, fun22, fun23, fun24, fun25
 
 
 def test_fun20() -> None:
@@ -235,8 +235,8 @@ def test_fun25() -> None:
     Extract field names and their values in the Infobox “country”, and store them in a dictionary object.
     """
     expected = ""
-    achieved = fun24()
-    # assert expected == achieved
+    achieved = fun25()
+    assert expected == achieved
 
 
 def test_fun26() -> None:

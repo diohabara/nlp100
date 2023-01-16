@@ -39,9 +39,41 @@ def fun24() -> list[str]:
     #  [[File:United Kingdom (+overseas territories and crown dependencies) in the World (+Antarctica claims).svg|frameless|upright=1.15]]
     pattern = r"\[\[File:([^\.]*\.[^\|]*)\|[^\|]*\|[^\]]*\]\]"
     prog = re.compile(pattern)
-    print(prog)
     return prog.findall(data)
 
 
+def fun25() -> dict[str, str]:
+    data = fun20()
+    # print(data)
+    infobox_pattern = r"\{\{Infobox country.*\}\}\n\n"
+    infobox_prog = re.compile(infobox_pattern)
+    print(infobox_prog.findall(data))
+    kv_pattern = r"\| (\S*)\s= (.*)\n"
+    kv_prog = re.compile(kv_pattern)
+    res = {}
+    for infobox_text in infobox_prog.findall(data):
+        print(infobox_text)
+        for k, v in kv_prog.findall(infobox_text):
+            print(k, v)
+            res[k] = v
+    return res
+
+
+def fun26():
+    pass
+
+
+def fun27():
+    pass
+
+
+def fun28():
+    pass
+
+
+def fun29():
+    pass
+
+
 if __name__ == "__main__":
-    fun21()
+    fun25()
